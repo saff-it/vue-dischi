@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="container">
-        <img  class="ms_header-logo" src="https://cantabrialabsdifacooper.it/wp-content/uploads/2021/03/png-clipart-spotify-logo-spotify-computer-icons-podcast-music-apps-miscellaneous-angle.png" alt="Logo">
+    <div class="container-fluid">
+        <img  class="ms_header-logo" src="../assets/logo-small.svg" alt="Logo">
     </div>
   </header>
 </template>
@@ -13,12 +13,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/variables.scss";
 
-div.container{
-    width: 100%;
-    height: 80px;
-    background-color: black;
+div.container-fluid{
+    height: 70px;
+    background-color: $cardColorBg;
+
+    img{
+        height: 100%;
+        padding: 15px;
+    }
 }
+
+
 
 
 </style>
