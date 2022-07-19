@@ -1,7 +1,7 @@
 <template>
 
     <section>
-        <discCard v-for="(card, index) in cards"
+        <discCard v-for="(card, index) in comicCards"
         :key="index" 
             :singleCard="card"
         />
@@ -24,15 +24,16 @@ export default {
 
   data: function() {
     return{
-        cards: [],
+        comicCards: [],
     }
   }, 
 
   methods:{
-    getSingleCard(){
+    getAllCards(){
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
         .then((result) => {
-            this.cards.push(result.data.response);
+            this.comicCards = result.data.response;
+            console.log(result.data.response);
         })
         .catch((error) => {
             console.log(error);
@@ -41,7 +42,7 @@ export default {
   },
 
   created(){
-    this.getSingleCard();
+    this.getAllCards();
   }
     
     

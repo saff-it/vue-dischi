@@ -3,7 +3,7 @@
     <div class="ms_disc-container">
         <img :src="singleCard.poster"
             alt="Disc Cover">
-        <h3>New Jersey</h3>
+        <h3>{{singleCard.title}}</h3>
         <span>Bob Joviu <br> 1190</span>
     </div>
 
