@@ -4,7 +4,7 @@
 
         <section>
             <div class="form-floating">
-                <select class="form-select" v-model="genre" @change="getConsoleLogSelect()" id="floatingSelect">
+                <select class="form-select" v-model="genre" @change="getFilteredByGenre()" id="floatingSelect">
                     <option selected>Seleziona il genere</option>
                     <option value="Rock"> Rock </option>
                     <option value="Pop"> Pop </option>
@@ -15,7 +15,6 @@
             </div>
 
         </section>
-
 
         <section>
             <discCard v-for="(card, index) in comicCards" :key="index"
@@ -77,10 +76,24 @@ export default {
 
     },
 
+    computed: {
+        getFilteredByGenre(){
+            const filteredDisc = [...this.comicCards];
+            console.log(filteredDisc);
+            if(this.genre.includes(this.card.genre)){
+                return filteredDisc.filter( (card) => card.genre == this.genre);
+                }   
+
+                return filteredDisc;
+            }
+            
+            
+    },
+
     created() {
         this.getAllCards();
         this.getMusicGenres();
-    }
+    },
 
 
 }
