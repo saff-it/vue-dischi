@@ -4,7 +4,7 @@
         <img :src="singleCard.poster"
             alt="Disc Cover">
         <h3>{{singleCard.title}}</h3>
-        <span>Bob Joviu <br> 1190</span>
+        <span>{{singleCard.author}} <br> {{singleCard.year}}</span>
     </div>
 
 </template>
